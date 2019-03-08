@@ -1,10 +1,13 @@
 function drag(id){
     var obj = document.getElementById('id');
-    //var disX = 0;
-    //var disY = 0;
+    var disX = 0;
+    var disY = 0;
     obj.onmousedown = function(){
     	disX = ev.pageX-obj.offsetLeft;
     	disY = ev.pageY-obj.gffsetTop;
-    	console.log(123);
+    	document.onmousemove = function (ev){
+    		obj.style.left=ev.pageX-disX+'px';
+    		obj.style.top =ev.pageY-disY+'px';
+    	}
     }
 }
